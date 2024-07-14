@@ -1,0 +1,230 @@
+ul{
+    list-style: none;
+}
+
+:root{
+    --font-nav: 16px;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    font-family: "Wix Madefor Display", sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px 0;
+}
+
+.header {
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.header .logo {
+    background-image: url(img/icons/Vector.svg);
+    background-size: 100%;
+    margin: 0;
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    left: 15px;
+    top: 25px;   
+}
+.header .burger{
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    margin-left: 18em;
+    top: 33px;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    z-index: 2;
+}
+
+.header .burger input{
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    pointer-events: none;
+    outline: none;
+}
+
+.header .burger input:checked{
+    opacity: 0;
+}
+
+.header .burger .burger--dots{
+    display: flex;
+}
+.header .burger .burger--dots::before{
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: linear-gradient(90.00deg, rgb(0, 86, 254),rgb(25, 191, 234) 100%);
+}
+.header .burger .burger--dots::after{
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: linear-gradient(90.00deg, rgb(0, 86, 254),rgb(25, 191, 234) 100%);
+    left: 17px;
+}
+.header .burger:active .burger--dots{
+    flex: none;
+    position: static;
+}
+
+.header .burger input:checked .burger--dots::after .burger--dots::before{
+    transition: 200ms;
+}
+
+.header .burger:has(input:checked) .burger--dots::after{
+    transform: rotate(-45deg);
+    width: 32px;
+    height: 4px;
+    margin: 7px 0px;
+    left: 0;
+    top: 0;
+}
+
+.header .burger:has(input:checked) .burger--dots::before{
+    transform: rotate(45deg);
+    width: 32px;
+    height: 4px;
+    margin: 7px 0px;
+    top: 0;
+}
+.header .burger:has(input:checked) + .nav{
+    display: flex;
+}
+.header .nav{
+    
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 928px;
+    display: none;
+}
+.header .nav .nav--title{
+    background: linear-gradient(137.70deg, rgb(57, 199, 236),rgb(57, 199, 236),rgb(0, 80, 236));
+    background-clip:text;
+    text-fill-color:transparent;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 100%;
+}
+.header .nav .nav--list{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0;
+    flex-wrap: wrap;
+}
+.header .nav .nav--list li{
+    color: rgb(32, 32, 33);
+    font-size: 18px;
+    font-weight: 700;
+    padding-bottom: 20px;
+    line-height: 120%;
+    letter-spacing: 0%;
+}
+
+.header .nav .nav--list-sub{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0;
+    flex-wrap: wrap;
+    line-height: 100%;
+    max-height: 8em;
+}
+
+.header .nav .nav--list-sub li{
+    color: rgb(32, 32, 33);
+    font-size: var(--font-nav);
+    font-weight: 700;
+    padding-bottom: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    padding-right: 6em;
+}
+
+.header .nav .nav-button{
+    position: absolute;
+    left: 15px;
+    top: 457px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 22px 13px 22px;
+    border-radius: 10px;
+    border: none;
+    background: rgb(0, 86, 254);
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 100%;
+    padding: 13px 22px 13px 22px;
+}
+
+
+.header-content h2 {
+    margin: 20px 0 10px;
+}
+
+.header-button {
+    background-color: #00aaff;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.section {
+    padding: 40px 0;
+}
+
+.statistics, .features, .benefits, .reviews, .partners, .blog, .press {
+    background-color: white;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.statistics-content, .features-content, .benefits-content, .reviews-content, .partners-content, .press-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.statistics-item, .feature-item, .benefit-item, .review-item, .partner-item, .press-item {
+    flex: 1 1 calc(25% - 20px);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+}
+
+.footer {
+    background-color: #0044cc;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
